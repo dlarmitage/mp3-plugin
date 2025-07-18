@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Simple MP3/Audio Player
- * Plugin URI: https://ambient.technology
+ * Plugin URI: https://github.com/dlarmitage/mp3-plugin
  * Description: A streamlined MP3 player for WordPress with basic controls and shortcode support.
  * Version: 1.0.1
  * Author: David Armitage - Ambient Technology
