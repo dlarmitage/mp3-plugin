@@ -1,0 +1,21 @@
+SCREENSHOT 1: Admin Interface
+============================
+
+File: screenshot-1.png
+Size: 1280x960 pixels
+Format: PNG
+
+CONTENT TO SHOW:
+- WordPress Admin Panel (MP3 Players section)
+- List view of created MP3 players
+- Columns showing: Title, Shortcode, Audio File, Date
+- Example shortcode: [mp3_player id="123"]
+- "Add New" button visible
+- Clean, professional admin interface
+
+PURPOSE:
+- Demonstrate the admin functionality
+- Show how easy it is to manage players
+- Highlight the shortcode generation feature
+
+This screenshot should be created as a PNG file and placed in the root directory. 

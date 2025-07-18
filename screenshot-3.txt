@@ -1,0 +1,23 @@
+SCREENSHOT 3: Frontend Player Display
+===================================
+
+File: screenshot-3.png
+Size: 1280x960 pixels
+Format: PNG
+
+CONTENT TO SHOW:
+- WordPress frontend page/post
+- MP3 player embedded in content
+- Player showing 70% width, centered
+- Clean, minimal design visible
+- Play controls visible (play button, progress bar, time display)
+- Audio file loaded and ready to play
+- Professional appearance
+
+PURPOSE:
+- Show the final result
+- Demonstrate the clean, minimal design
+- Highlight the centered, 70% width layout
+- Show the player in context
+
+This screenshot should be created as a PNG file and placed in the root directory. 

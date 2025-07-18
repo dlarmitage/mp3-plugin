@@ -1,0 +1,23 @@
+SCREENSHOT 2: Player Creation Interface
+=====================================
+
+File: screenshot-2.png
+Size: 1280x960 pixels
+Format: PNG
+
+CONTENT TO SHOW:
+- WordPress Admin Panel (Add New MP3 Player)
+- Title field filled with example: "Episode 1 - Introduction"
+- MP3 Player Settings metabox
+- Audio File section with "Select Audio File" button
+- Player Options checkboxes (Autoplay, Loop, Show Controls)
+- Shortcode sidebar showing: [mp3_player id="123"]
+- Copy Shortcode button
+- Publish button
+
+PURPOSE:
+- Show the player creation process
+- Demonstrate the media library integration
+- Highlight the shortcode generation
+
+This screenshot should be created as a PNG file and placed in the root directory. 
