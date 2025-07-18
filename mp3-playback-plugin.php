@@ -3,7 +3,7 @@
  * Plugin Name: MP3 Playback Plugin
  * Plugin URI: https://ambient.technology
  * Description: A streamlined MP3 player plugin for WordPress with basic controls and shortcode support.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: David Armitage - Ambient Technology
  * Author URI: https://ambient.technology
  * License: Apache License 2.0
@@ -22,7 +22,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define plugin constants
-define('MP3_PLAYBACK_VERSION', '1.0.0');
+define('MP3_PLAYBACK_VERSION', '1.0.1');
 define('MP3_PLAYBACK_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('MP3_PLAYBACK_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('MP3_PLAYBACK_PLUGIN_FILE', __FILE__);

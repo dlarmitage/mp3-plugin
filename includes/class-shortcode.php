@@ -17,6 +17,7 @@ class MP3Playback_Shortcode {
     
     public function __construct() {
         add_shortcode('mp3_player', array($this, 'render_player'));
+        add_shortcode('player', array($this, 'render_player')); // Support both shortcodes
     }
     
     public function render_player($atts) {
@@ -47,7 +48,7 @@ class MP3Playback_Shortcode {
     private function render_player_by_id($atts) {
         $post = get_post($atts['id']);
         
-        if (!$post || $post->post_type !== 'mp3_player') {
+        if (!$post || $post->post_type !== 'mp3_player' || $post->post_status !== 'publish') {
             return '<p>' . __('Error: MP3 Player not found.', 'mp3-playback') . '</p>';
         }
         
