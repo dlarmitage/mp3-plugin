@@ -1,0 +1,27 @@
+SCREENSHOT SPECIFICATIONS
+=========================
+
+File: screenshot-1.png
+Size: 1280x960 pixels
+Format: PNG
+
+CONTENT TO SHOW:
+1. WordPress Admin Panel (MP3 Players section)
+2. List of created MP3 players
+3. Shortcode column showing [mp3_player id="123"]
+4. Audio file column showing file names
+5. "Add New" button visible
+
+OR ALTERNATIVE:
+1. WordPress post editor
+2. MP3 player embedded in content
+3. Player showing 70% width, centered
+4. Clean, minimal design visible
+5. Play controls visible
+
+PURPOSE:
+- Show the admin interface functionality
+- Demonstrate the clean, professional design
+- Highlight the ease of use
+
+This screenshot should be created as a PNG file and placed in the assets/ directory. 

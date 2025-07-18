@@ -1,0 +1,26 @@
+BANNER IMAGE SPECIFICATIONS
+==========================
+
+File: banner-772x250.png
+Size: 772x250 pixels
+Format: PNG
+
+DESIGN ELEMENTS:
+- Background: Gradient from #007cba to #005a87 (blue theme)
+- Main text: "MP3 Playback Plugin" (large, white, bold)
+- Subtitle: "Clean, Simple Audio Players for WordPress" (smaller, white)
+- Icon: Play button with audio waves (white, positioned on left)
+- Company: "by Ambient Technology" (bottom right, small)
+
+LAYOUT:
+- Left side: Icon and main title
+- Right side: Subtitle and tagline
+- Bottom: Company attribution
+
+COLORS:
+- Primary: #007cba (WordPress blue)
+- Secondary: #005a87 (darker blue)
+- Text: #ffffff (white)
+- Accent: #f8f9fa (light gray for subtle elements)
+
+This banner should be created as a PNG file and placed in the assets/ directory. 
