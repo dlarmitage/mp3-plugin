@@ -128,7 +128,7 @@ class MP3Playback_Admin {
     public function save_meta_box_data($post_id) {
         // Check if nonce is valid
         if (!isset($_POST['mp3_player_meta_box_nonce']) || 
-            !wp_verify_nonce(wp_unslash($_POST['mp3_player_meta_box_nonce']), 'mp3_player_meta_box')) {
+            !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['mp3_player_meta_box_nonce'])), 'mp3_player_meta_box')) {
             return;
         }
         
@@ -180,8 +180,8 @@ class MP3Playback_Admin {
             'ajaxUrl' => admin_url('admin-ajax.php'),
             'nonce' => wp_create_nonce('mp3_playback_nonce'),
             'strings' => array(
-                'selectAudioFile' => __('Select Audio File', 'mp3-playback'),
-                'useThisFile' => __('Use This File', 'mp3-playback'),
+                'selectAudioFile' => esc_html__('Select Audio File', 'simple-mp3-audio-player'),
+                'useThisFile' => esc_html__('Use This File', 'simple-mp3-audio-player'),
             )
         ));
     }

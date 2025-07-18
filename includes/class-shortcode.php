@@ -83,7 +83,7 @@ class MP3Playback_Shortcode {
         if (is_numeric($audio_file)) {
             $audio_url = wp_get_attachment_url($audio_file);
             if (!$audio_url) {
-                return '<p>' . __('Error: Audio file not found in media library.', 'mp3-playback') . '</p>';
+                return '<p>' . esc_html__('Error: Audio file not found in media library.', 'simple-mp3-audio-player') . '</p>';
             }
             $audio_file = $audio_url;
         }
