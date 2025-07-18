@@ -100,33 +100,33 @@ class MP3Playback_Media_Integration {
             $sample_rate = get_post_meta($post->ID, '_mp3_sample_rate', true);
             
             $form_fields['mp3_duration'] = array(
-                'label' => __('Duration', 'mp3-playback'),
+                'label' => esc_html__('Duration', 'simple-mp3-audio-player'),
                 'input' => 'html',
-                'html' => $duration ? $this->format_duration($duration) : __('Unknown', 'mp3-playback'),
-                'helps' => __('Length of the audio file', 'mp3-playback')
+                'html' => $duration ? $this->format_duration($duration) : esc_html__('Unknown', 'simple-mp3-audio-player'),
+                'helps' => esc_html__('Length of the audio file', 'simple-mp3-audio-player')
             );
             
             $form_fields['mp3_bitrate'] = array(
-                'label' => __('Bitrate', 'mp3-playback'),
+                'label' => esc_html__('Bitrate', 'simple-mp3-audio-player'),
                 'input' => 'html',
-                'html' => $bitrate ? round($bitrate / 1000) . ' kbps' : __('Unknown', 'mp3-playback'),
-                'helps' => __('Audio quality (bits per second)', 'mp3-playback')
+                'html' => $bitrate ? round($bitrate / 1000) . ' kbps' : esc_html__('Unknown', 'simple-mp3-audio-player'),
+                'helps' => esc_html__('Audio quality (bits per second)', 'simple-mp3-audio-player')
             );
             
             $form_fields['mp3_sample_rate'] = array(
-                'label' => __('Sample Rate', 'mp3-playback'),
+                'label' => esc_html__('Sample Rate', 'simple-mp3-audio-player'),
                 'input' => 'html',
-                'html' => $sample_rate ? $sample_rate . ' Hz' : __('Unknown', 'mp3-playback'),
-                'helps' => __('Audio sample rate', 'mp3-playback')
+                'html' => $sample_rate ? $sample_rate . ' Hz' : esc_html__('Unknown', 'simple-mp3-audio-player'),
+                'helps' => esc_html__('Audio sample rate', 'simple-mp3-audio-player')
             );
             
             // Add shortcode field
             $shortcode = '[mp3_player file="' . $post->ID . '"]';
             $form_fields['mp3_shortcode'] = array(
-                'label' => __('Shortcode', 'mp3-playback'),
+                'label' => esc_html__('Shortcode', 'simple-mp3-audio-player'),
                 'input' => 'html',
                 'html' => '<input type="text" readonly value="' . esc_attr($shortcode) . '" style="width: 100%;" onclick="this.select();" />',
-                'helps' => __('Copy this shortcode to use this audio file in your posts', 'mp3-playback')
+                'helps' => esc_html__('Copy this shortcode to use this audio file in your posts', 'simple-mp3-audio-player')
             );
         }
         

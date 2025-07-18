@@ -1,19 +1,17 @@
 <?php
 /**
- * Plugin Name: MP3 Playback Plugin
+ * Plugin Name: Simple MP3/Audio Player
  * Plugin URI: https://ambient.technology
- * Description: A streamlined MP3 player plugin for WordPress with basic controls and shortcode support.
+ * Description: A streamlined MP3 player for WordPress with basic controls and shortcode support.
  * Version: 1.0.1
  * Author: David Armitage - Ambient Technology
  * Author URI: https://ambient.technology
  * License: Apache License 2.0
  * License URI: https://www.apache.org/licenses/LICENSE-2.0
- * Text Domain: mp3-playback
- * Domain Path: /languages
+ * Text Domain: simple-mp3-audio-player
  * Requires at least: 5.0
- * Tested up to: 6.4
+ * Tested up to: 6.8
  * Requires PHP: 7.4
- * Network: false
  */
 
 // Prevent direct access
@@ -105,16 +103,16 @@ class MP3PlaybackPlugin {
     public function create_post_type() {
         register_post_type('mp3_player', array(
             'labels' => array(
-                'name' => __('MP3 Players', 'mp3-playback'),
-                'singular_name' => __('MP3 Player', 'mp3-playback'),
-                'add_new' => __('Add New Player', 'mp3-playback'),
-                'add_new_item' => __('Add New MP3 Player', 'mp3-playback'),
-                'edit_item' => __('Edit MP3 Player', 'mp3-playback'),
-                'new_item' => __('New MP3 Player', 'mp3-playback'),
-                'view_item' => __('View MP3 Player', 'mp3-playback'),
-                'search_items' => __('Search MP3 Players', 'mp3-playback'),
-                'not_found' => __('No MP3 players found', 'mp3-playback'),
-                'not_found_in_trash' => __('No MP3 players found in trash', 'mp3-playback'),
+                'name' => esc_html__('MP3 Players', 'simple-mp3-audio-player'),
+                'singular_name' => esc_html__('MP3 Player', 'simple-mp3-audio-player'),
+                'add_new' => esc_html__('Add New Player', 'simple-mp3-audio-player'),
+                'add_new_item' => esc_html__('Add New MP3 Player', 'simple-mp3-audio-player'),
+                'edit_item' => esc_html__('Edit MP3 Player', 'simple-mp3-audio-player'),
+                'new_item' => esc_html__('New MP3 Player', 'simple-mp3-audio-player'),
+                'view_item' => esc_html__('View MP3 Player', 'simple-mp3-audio-player'),
+                'search_items' => esc_html__('Search MP3 Players', 'simple-mp3-audio-player'),
+                'not_found' => esc_html__('No MP3 players found', 'simple-mp3-audio-player'),
+                'not_found_in_trash' => esc_html__('No MP3 players found in trash', 'simple-mp3-audio-player'),
             ),
             'public' => false,
             'show_ui' => true,

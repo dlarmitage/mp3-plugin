@@ -34,10 +34,10 @@ class MP3Playback_Public {
             'ajaxUrl' => admin_url('admin-ajax.php'),
             'nonce' => wp_create_nonce('mp3_playback_nonce'),
             'strings' => array(
-                'play' => __('Play', 'mp3-playback'),
-                'pause' => __('Pause', 'mp3-playback'),
-                'mute' => __('Mute', 'mp3-playback'),
-                'unmute' => __('Unmute', 'mp3-playback'),
+                'play' => esc_html__('Play', 'simple-mp3-audio-player'),
+                'pause' => esc_html__('Pause', 'simple-mp3-audio-player'),
+                'mute' => esc_html__('Mute', 'simple-mp3-audio-player'),
+                'unmute' => esc_html__('Unmute', 'simple-mp3-audio-player'),
             )
         ));
     }

@@ -1,8 +1,8 @@
-# MP3 Playback Plugin
+# Simple MP3/Audio Player
 
-A streamlined, lightweight MP3 player plugin for WordPress with clean design and easy shortcode integration.
+A streamlined, lightweight MP3 player for WordPress with clean design and easy shortcode integration.
 
-**Version:** 1.0.0  
+**Version:** 1.0.1  
 **Author:** David Armitage - Ambient Technology  
 **License:** Apache License 2.0  
 **Website:** https://ambient.technology

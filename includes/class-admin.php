@@ -31,7 +31,7 @@ class MP3Playback_Admin {
     public function add_meta_boxes() {
         add_meta_box(
             'mp3_player_settings',
-            __('MP3 Player Settings', 'mp3-playback'),
+            __('MP3 Player Settings', 'simple-mp3-audio-player'),
             array($this, 'render_meta_box'),
             'mp3_player',
             'normal',
@@ -40,7 +40,7 @@ class MP3Playback_Admin {
         
         add_meta_box(
             'mp3_player_shortcode',
-            __('Shortcode', 'mp3-playback'),
+            __('Shortcode', 'simple-mp3-audio-player'),
             array($this, 'render_shortcode_box'),
             'mp3_player',
             'side',
@@ -64,42 +64,42 @@ class MP3Playback_Admin {
         <table class="form-table">
             <tr>
                 <th scope="row">
-                    <label for="mp3_audio_file"><?php _e('Audio File', 'mp3-playback'); ?></label>
+                    <label for="mp3_audio_file"><?php esc_html_e('Audio File', 'simple-mp3-audio-player'); ?></label>
                 </th>
                 <td>
                     <input type="hidden" id="mp3_audio_file" name="mp3_audio_file" value="<?php echo esc_attr($audio_file); ?>" />
                     <button type="button" id="select_audio_file" class="button">
-                        <?php _e('Select Audio File', 'mp3-playback'); ?>
+                        <?php esc_html_e('Select Audio File', 'simple-mp3-audio-player'); ?>
                     </button>
                     <button type="button" id="remove_audio_file" class="button" style="display: <?php echo $audio_file ? 'inline-block' : 'none'; ?>;">
-                        <?php _e('Remove', 'mp3-playback'); ?>
+                        <?php esc_html_e('Remove', 'simple-mp3-audio-player'); ?>
                     </button>
                     <div id="audio_file_preview" style="margin-top: 10px;">
                         <?php if ($audio_file): ?>
                             <audio controls style="max-width: 100%;">
                                 <source src="<?php echo esc_url($audio_file); ?>" type="audio/mpeg">
-                                <?php _e('Your browser does not support the audio element.', 'mp3-playback'); ?>
+                                <?php esc_html_e('Your browser does not support the audio element.', 'simple-mp3-audio-player'); ?>
                             </audio>
                         <?php endif; ?>
                     </div>
                 </td>
             </tr>
             <tr>
-                <th scope="row"><?php _e('Player Options', 'mp3-playback'); ?></th>
+                <th scope="row"><?php esc_html_e('Player Options', 'simple-mp3-audio-player'); ?></th>
                 <td>
                     <label>
                         <input type="checkbox" name="mp3_autoplay" value="1" <?php checked($autoplay, '1'); ?> />
-                        <?php _e('Autoplay', 'mp3-playback'); ?>
+                        <?php esc_html_e('Autoplay', 'simple-mp3-audio-player'); ?>
                     </label>
                     <br>
                     <label>
                         <input type="checkbox" name="mp3_loop" value="1" <?php checked($loop, '1'); ?> />
-                        <?php _e('Loop', 'mp3-playback'); ?>
+                        <?php esc_html_e('Loop', 'simple-mp3-audio-player'); ?>
                     </label>
                     <br>
                     <label>
                         <input type="checkbox" name="mp3_show_controls" value="1" <?php checked($show_controls, '1'); ?> />
-                        <?php _e('Show Controls', 'mp3-playback'); ?>
+                        <?php esc_html_e('Show Controls', 'simple-mp3-audio-player'); ?>
                     </label>
                 </td>
             </tr>
@@ -110,17 +110,17 @@ class MP3Playback_Admin {
     public function render_shortcode_box($post) {
         $shortcode = '[mp3_player id="' . $post->ID . '"]';
         ?>
-        <p><?php _e('Use this shortcode to display the player in your posts or pages:', 'mp3-playback'); ?></p>
+        <p><?php esc_html_e('Use this shortcode to display the player in your posts or pages:', 'simple-mp3-audio-player'); ?></p>
         <div style="background: #f1f1f1; padding: 10px; border-radius: 3px;">
             <code id="shortcode_text" style="display: block; word-break: break-all;"><?php echo esc_html($shortcode); ?></code>
         </div>
         <p>
             <button type="button" id="copy_shortcode" class="button button-small">
-                <?php _e('Copy Shortcode', 'mp3-playback'); ?>
+                <?php esc_html_e('Copy Shortcode', 'simple-mp3-audio-player'); ?>
             </button>
         </p>
         <div id="copy_message" style="display: none; color: green; font-weight: bold;">
-            <?php _e('Shortcode copied!', 'mp3-playback'); ?>
+            <?php esc_html_e('Shortcode copied!', 'simple-mp3-audio-player'); ?>
         </div>
         <?php
     }
@@ -128,7 +128,7 @@ class MP3Playback_Admin {
     public function save_meta_box_data($post_id) {
         // Check if nonce is valid
         if (!isset($_POST['mp3_player_meta_box_nonce']) || 
-            !wp_verify_nonce($_POST['mp3_player_meta_box_nonce'], 'mp3_player_meta_box')) {
+            !wp_verify_nonce(wp_unslash($_POST['mp3_player_meta_box_nonce']), 'mp3_player_meta_box')) {
             return;
         }
         
@@ -144,7 +144,7 @@ class MP3Playback_Admin {
         
         // Save audio file
         if (isset($_POST['mp3_audio_file'])) {
-            update_post_meta($post_id, '_mp3_audio_file', sanitize_url($_POST['mp3_audio_file']));
+            update_post_meta($post_id, '_mp3_audio_file', sanitize_url(wp_unslash($_POST['mp3_audio_file'])));
         }
         
         // Save autoplay setting
@@ -190,8 +190,8 @@ class MP3Playback_Admin {
         $new_columns = array();
         $new_columns['cb'] = $columns['cb'];
         $new_columns['title'] = $columns['title'];
-        $new_columns['shortcode'] = __('Shortcode', 'mp3-playback');
-        $new_columns['audio_file'] = __('Audio File', 'mp3-playback');
+        $new_columns['shortcode'] = esc_html__('Shortcode', 'simple-mp3-audio-player');
+        $new_columns['audio_file'] = esc_html__('Audio File', 'simple-mp3-audio-player');
         $new_columns['date'] = $columns['date'];
         
         return $new_columns;
@@ -207,9 +207,9 @@ class MP3Playback_Admin {
             case 'audio_file':
                 $audio_file = get_post_meta($post_id, '_mp3_audio_file', true);
                 if ($audio_file) {
-                    echo '<a href="' . esc_url($audio_file) . '" target="_blank">' . basename($audio_file) . '</a>';
+                    echo '<a href="' . esc_url($audio_file) . '" target="_blank">' . esc_html(basename($audio_file)) . '</a>';
                 } else {
-                    echo '<span style="color: #999;">' . __('No file selected', 'mp3-playback') . '</span>';
+                    echo '<span style="color: #999;">' . esc_html__('No file selected', 'simple-mp3-audio-player') . '</span>';
                 }
                 break;
         }

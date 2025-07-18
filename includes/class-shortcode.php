@@ -42,14 +42,14 @@ class MP3Playback_Shortcode {
             return $this->render_player_by_id($atts);
         }
         
-        return '<p>' . __('Error: No audio file or player ID specified.', 'mp3-playback') . '</p>';
+        return '<p>' . esc_html__('Error: No audio file or player ID specified.', 'simple-mp3-audio-player') . '</p>';
     }
     
     private function render_player_by_id($atts) {
         $post = get_post($atts['id']);
         
         if (!$post || $post->post_type !== 'mp3_player' || $post->post_status !== 'publish') {
-            return '<p>' . __('Error: MP3 Player not found.', 'mp3-playback') . '</p>';
+            return '<p>' . esc_html__('Error: MP3 Player not found.', 'simple-mp3-audio-player') . '</p>';
         }
         
         // Get player settings
@@ -59,7 +59,7 @@ class MP3Playback_Shortcode {
         $show_controls = get_post_meta($post->ID, '_mp3_show_controls', true);
         
         if (empty($audio_file)) {
-            return '<p>' . __('Error: No audio file selected for this player.', 'mp3-playback') . '</p>';
+            return '<p>' . esc_html__('Error: No audio file selected for this player.', 'simple-mp3-audio-player') . '</p>';
         }
         
         // Override with shortcode attributes if provided
@@ -124,7 +124,7 @@ class MP3Playback_Shortcode {
         
         $html .= '<audio ' . implode(' ', $attributes) . '>';
         $html .= '<source src="' . esc_url($audio_file) . '" type="audio/mpeg">';
-        $html .= __('Your browser does not support the audio element.', 'mp3-playback');
+        $html .= esc_html__('Your browser does not support the audio element.', 'simple-mp3-audio-player');
         $html .= '</audio>';
         
         // Add custom controls if not using native controls
@@ -142,13 +142,13 @@ class MP3Playback_Shortcode {
         $html .= '<div class="mp3-player-controls-row">';
         
         // Play/Pause button
-        $html .= '<button class="mp3-player-btn mp3-player-play-pause" aria-label="' . __('Play', 'mp3-playback') . '">';
+        $html .= '<button class="mp3-player-btn mp3-player-play-pause" aria-label="' . esc_attr__('Play', 'simple-mp3-audio-player') . '">';
         $html .= '<span class="mp3-player-icon mp3-player-icon-play">▶</span>';
         $html .= '<span class="mp3-player-icon mp3-player-icon-pause" style="display: none;">⏸</span>';
         $html .= '</button>';
         
         // Rewind 15s
-        $html .= '<button class="mp3-player-btn mp3-player-rewind" aria-label="' . __('Rewind 15 seconds', 'mp3-playback') . '">⏪</button>';
+        $html .= '<button class="mp3-player-btn mp3-player-rewind" aria-label="' . esc_attr__('Rewind 15 seconds', 'simple-mp3-audio-player') . '">⏪</button>';
         
         // Progress bar
         $html .= '<div class="mp3-player-progress-container">';
@@ -158,7 +158,7 @@ class MP3Playback_Shortcode {
         $html .= '</div>';
         
         // Forward 15s
-        $html .= '<button class="mp3-player-btn mp3-player-forward" aria-label="' . __('Forward 15 seconds', 'mp3-playback') . '">⏩</button>';
+        $html .= '<button class="mp3-player-btn mp3-player-forward" aria-label="' . esc_attr__('Forward 15 seconds', 'simple-mp3-audio-player') . '">⏩</button>';
         
         // Time display
         $html .= '<div class="mp3-player-time">';
@@ -173,13 +173,13 @@ class MP3Playback_Shortcode {
         
         // Volume control
         $html .= '<div class="mp3-player-volume-container">';
-        $html .= '<button class="mp3-player-btn mp3-player-mute" aria-label="' . __('Mute', 'mp3-playback') . '">🔊</button>';
-        $html .= '<input type="range" class="mp3-player-volume" min="0" max="100" value="100" aria-label="' . __('Volume', 'mp3-playback') . '">';
+        $html .= '<button class="mp3-player-btn mp3-player-mute" aria-label="' . esc_attr__('Mute', 'simple-mp3-audio-player') . '">🔊</button>';
+        $html .= '<input type="range" class="mp3-player-volume" min="0" max="100" value="100" aria-label="' . esc_attr__('Volume', 'simple-mp3-audio-player') . '">';
         $html .= '</div>';
         
         // Playback speed
         $html .= '<div class="mp3-player-speed-container">';
-        $html .= '<select class="mp3-player-speed" aria-label="' . __('Playback Speed', 'mp3-playback') . '">';
+        $html .= '<select class="mp3-player-speed" aria-label="' . esc_attr__('Playback Speed', 'simple-mp3-audio-player') . '">';
         $html .= '<option value="0.5">0.5x</option>';
         $html .= '<option value="0.75">0.75x</option>';
         $html .= '<option value="1" selected>1x</option>';
